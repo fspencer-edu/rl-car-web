@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RL Car Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <h1>Reinforcement Learning Car Demo</h1>
+        <p>Live browser simulation with Flask + JavaScript</p>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <h3>Episode</h3>
+        <div id="episode">0</div>
+      </div>
+      <div class="card">
+        <h3>Step</h3>
+        <div id="step">0</div>
+      </div>
+      <div class="card">
+        <h3>Epsilon</h3>
+        <div id="epsilon">1.00</div>
+      </div>
+      <div class="card">
+        <h3>Success Rate</h3>
+        <div id="successRate">0%</div>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      <div class="panel">
+        <h2>Live World</h2>
+        <canvas id="worldCanvas" width="500" height="500"></canvas>
+      </div>
+
+      <div class="panel">
+        <h2>Reward Trend</h2>
+        <canvas id="rewardCanvas" width="500" height="150"></canvas>
+
+        <h2>Steps Trend</h2>
+        <canvas id="stepsCanvas" width="500" height="150"></canvas>
+
+        <h2>Success Trend</h2>
+        <canvas id="successCanvas" width="500" height="150"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='rl.js') }}"></script>
+</body>
+</html>
